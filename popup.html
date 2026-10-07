@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  body { width: 260px; font-family: Segoe UI, Arial, sans-serif; margin: 0; padding: 14px; color: #222; }
+  h1 { font-size: 15px; margin: 0 0 4px; }
+  p { font-size: 12px; color: #555; margin: 0 0 12px; }
+  .row { display: flex; align-items: center; justify-content: space-between; background: #f4f6f8; border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+  .row b { font-size: 13px; }
+  .status { font-size: 12px; font-weight: 600; }
+  .on { color: #1e8e3e; } .off { color: #c0392b; }
+  /* toggle switch */
+  .switch { position: relative; width: 44px; height: 24px; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .slider { position: absolute; cursor: pointer; inset: 0; background: #ccc; border-radius: 24px; transition: .2s; }
+  .slider:before { content: ""; position: absolute; height: 18px; width: 18px; left: 3px; bottom: 3px; background: #fff; border-radius: 50%; transition: .2s; }
+  input:checked + .slider { background: #1e8e3e; }
+  input:checked + .slider:before { transform: translateX(20px); }
+  button { width: 100%; padding: 8px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; font-size: 12px; }
+  button:hover { background: #f0f0f0; }
+  .tip { font-size: 11px; color: #777; margin-top: 10px; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <h1>🖱️ Right Click Enabler</h1>
+  <p>Right-click, copy, paste &amp; selection unlocked on this site.</p>
+  <div class="row">
+    <b id="status" class="status on">Enabled</b>
+    <label class="switch">
+      <input type="checkbox" id="toggle" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+  <button id="reload">↻ Reload this page</button>
+  <div class="tip">Turn it off and reload if a site misbehaves. Works on most copy-protected blogs, docs &amp; image galleries.</div>
+  <script src="popup.js"></script>
+</body>
+</html>
